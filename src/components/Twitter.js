@@ -9,6 +9,7 @@ const Twitter = ({ twitterUrl }) => {
       href={twitterUrl}
       target="_blank"
       rel="noreferrer"
+      title="Tweet this quote!"
     >
       <FaTwitter color="white" />
     </TwitterStyled>

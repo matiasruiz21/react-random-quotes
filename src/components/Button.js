@@ -10,7 +10,7 @@ const Button = ({ getQuote, color }) => {
 };
 
 const ButtonStyled = styled.button`
-  background-color: ${({ color }) => color};
+  background-color: ${({ theme }) => theme.color};
   color: white;
   padding: 0.25rem 0.5rem;
   border-radius: 0.25rem;
@@ -22,8 +22,8 @@ const ButtonStyled = styled.button`
   cursor: pointer;
   @media (min-width: 46em) {
     &:hover {
-      background-color: ${({ color }) =>
-        color ? colorShade(color, -30) : color};
+      background-color: ${({ theme }) =>
+        theme.color ? colorShade(theme.color, -30) : theme.color};
       transform: translate(0, -0.25rem);
     }
   }

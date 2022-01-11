@@ -5,8 +5,8 @@ const Background = ({ color, children }) => {
 };
 
 const BackgroundStyled = styled.div`
-  background-color: ${({ color }) => color};
-  color: ${({ color }) => color};
+  background-color: ${({ theme }) => theme.color};
+  color: ${({ theme }) => theme.color};
   height: 100vh;
   display: flex;
   align-items: center;

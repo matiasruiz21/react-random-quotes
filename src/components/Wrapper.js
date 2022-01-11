@@ -1,12 +1,11 @@
 import styled from "styled-components";
 import { FaGithub } from "react-icons/fa";
 
-const Wrapper = ({ color, children }) => {
+const Wrapper = ({ children }) => {
   return (
     <Container>
       <WrapperStyled id="wrapper">{children}</WrapperStyled>
       <LinkStyled
-        color={color}
         href="https://github.com/matiasruiz21"
         target="_blank"
         rel="noreferrer"

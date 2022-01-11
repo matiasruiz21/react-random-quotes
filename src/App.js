@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { useEffect } from "react";
+import { ThemeProvider } from "styled-components";
 import Background from "./components/Background";
 import Button from "./components/Button";
 import Quote from "./components/Quote";
 import QuoteBox from "./components/QuoteBox";
 import Twitter from "./components/Twitter";
 import Wrapper from "./components/Wrapper";
+import GlobalStyle from "./Global";
 
 let quotesObj;
 const colors = [
@@ -61,24 +63,27 @@ function App() {
   }, []);
 
   return (
-    <Background color={state.color}>
-      <Wrapper color={state.color}>
-        <QuoteBox>
-          <Quote quote={state.quote} author={state.author} />
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              marginTop: "1.5rem",
-              justifyItems: "center",
-            }}
-          >
-            <Twitter twitterUrl={state.twitterUrl} />
-            <Button getQuote={getQuote} color={state.color} />
-          </div>
-        </QuoteBox>
-      </Wrapper>
-    </Background>
+    <ThemeProvider theme={{ color: state.color }}>
+      <GlobalStyle />
+      <Background>
+        <Wrapper>
+          <QuoteBox>
+            <Quote quote={state.quote} author={state.author} />
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                marginTop: "1.5rem",
+                justifyItems: "center",
+              }}
+            >
+              <Twitter twitterUrl={state.twitterUrl} />
+              <Button getQuote={getQuote} />
+            </div>
+          </QuoteBox>
+        </Wrapper>
+      </Background>
+    </ThemeProvider>
   );
 }
 
