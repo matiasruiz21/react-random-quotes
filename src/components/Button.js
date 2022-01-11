@@ -19,10 +19,13 @@ const ButtonStyled = styled.button`
   transition-duration: 500ms;
   transition-property: background-color, transform;
   border: none;
-  &:hover {
-    background-color: ${({ color }) =>
-      color ? colorShade(color, -30) : color};
-    transform: translate(0, -0.25rem);
+  cursor: pointer;
+  @media (min-width: 46em) {
+    &:hover {
+      background-color: ${({ color }) =>
+        color ? colorShade(color, -30) : color};
+      transform: translate(0, -0.25rem);
+    }
   }
 `;
 

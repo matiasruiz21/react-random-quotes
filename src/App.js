@@ -32,7 +32,7 @@ function App() {
   };
 
   async function getData() {
-    await fetch("https://api.github.com/gists/54b659e43b1035215cd0ba1d4577ee80")
+    await fetch("https://api.github.com/gists/9e45832171f04fa5360817cbd85dec2a")
       .then((res) => res.json())
       .catch((error) => console.error("Error:", error))
       .then((response) => {
